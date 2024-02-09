@@ -1,0 +1,233 @@
+Q1) Reversing a string without using the built in reverse function:-
+
+A1) function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+reverseString('waleed');
+
+
+Q2) Counting the number of vowels in a string:-
+
+A2) function reverseString(str) {
+    var newString = "";
+    for (var i = str.length - 1; i >= 0; i--) {
+        newString += str[i];
+    }
+    return newString;
+}
+reverseString('waleed');
+
+Q3) Capitalizing the First letter of a string
+
+A3) function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+Q4) Checking if a string is a palindrome(A string that reads the same forwards and backwards like racecar)
+
+A4) function palindrome(str) {
+ var re = /[^A-Za-z0-9]/g;
+ str = str.toLowerCase().replace(re, '');
+ var len = str.length;
+ for (var i = 0; i < len/2; i++) {
+   if (str[i] !== str[len - 1 - i]) {
+       return false;
+   }
+ }
+ return true;
+}
+palindrome("A man, a plan, a canal. Panama");
+
+Q5) Finding the sum of positive numbers in an array.
+
+A5)const arr = [23, 34, 77, 99, 324];
+let sum = 0;
+for (let i = 0; i < arr.length; i++) {
+  sum += arr[i];
+}
+
+console.log(sum);
+
+Q6) Find the index of the first occurrence of a specific element in an array.
+
+A6) // Input array 
+arr = [1, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8, 8, 9]; 
+
+// Target element 
+target = 5; 
+
+// Iterate till length of array 
+for (let i = 0; i < arr.length; ++i) { 
+
+	// If target found return and exit program 
+	if (arr[i] === target) { 
+		console.log( 
+			"First index of " + target + " is: " + i 
+		); 
+		return; 
+	} 
+} 
+
+// If not found display output 
+console.log(target + " is not present in the given array");
+
+Q7)Removing all duplicates from an array without built-in methods.
+
+A7)const input = [1, 2, 3, 3, 4, 5,2, 6,3,6,1];
+
+function removeDuplicate(arr) {
+    const result = [];
+    let idx = 0;
+    const tmp = {};
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!tmp[arr[i]]) {
+            tmp[arr[i]] = 1;
+            result[idx] = arr[i];
+            idx++;
+        } 
+    }
+    return result;
+}
+
+console.log(removeDuplicate(input));
+
+Q8) Sorting the array in ascending and descending order without built in functions
+
+A8)arr = [5, 2, 7, 1, 0];
+
+function insertionSort(arr) {
+
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+
+        // Moving elements of arr[0..i-1], that are  
+        // greater than key, to one position ahead  
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+
+        arr[j + 1] = key;
+
+    }
+
+    return arr
+
+}
+
+console.log("Before sorting: ", arr);
+console.log("After sorting: ", insertionSort(arr));
+
+Q9) Printing all even numbers from 1 to 20 using while loop
+
+A9) let i=1 
+while (i<=20){
+  if(i%2==0){
+  console.log(i)
+  }
+  i++
+}
+
+Q10) Calculating the factorial of a number by using the do-while loop
+A10) function factorize(factorial){
+   var result = 1;
+  while(factorial){
+     if (factorial == 0 || factorial == 1){
+        break;
+     }
+     // ?
+     factorial = factorial - 1;
+     console.log(result);
+  }
+  return result;
+}
+
+Q11) Iterating through the properties of an object using a for-in loop.
+
+A11)// create an object
+const data = {
+  name: 'Shubham',
+  designation: 'Software Engineer'
+}
+
+// iterate over object
+for (const obj in data) {
+  // print key and value on console
+  console.log(`${obj}: ${data[obj]}`)
+}
+
+Q12)Looping through an array using the for of loop and doubling each element
+
+A12) function doubleArrayElements(arr) {
+  const doubledArray = [];
+
+  for (const element of arr) {
+    doubledArray.push(element * 2);
+  }
+
+  return doubledArray;
+}
+
+// Example usage:
+const originalArray = [1, 2, 3, 4, 5];
+const doubledResult = doubleArrayElements(originalArray);
+
+console.log('Original Array:', originalArray);
+console.log('Doubled Array:', doubledResult);
+
+Q13)Checking if a number is odd or even and returining a message
+
+A13) function checkOddOrEven(n) {
+	if (n & 1 == 1) {
+		return "Number is odd";
+	}
+	return "Number is even";
+}
+
+console.log(checkOddOrEven(12));
+console.log(checkOddOrEven(121));
+
+
+Q14) Finding the maximum of three numbers using nested ternary operators
+
+A14)
+var n1 = 5, n2 = 10, max;
+
+// Largest among n1 and n2
+max = (n1 > n2) ? n1 : n2;
+
+// Print the largest number
+document.write("Largest number between "
+	+ n1 + " and " + n2
+	+ " is " + max + ".");
+
+Q15)Determining if an year is a leap year or not
+
+A15)
+function isLeapYear(year) {
+    if (
+        year % 100 === 0 ? year % 400 === 0 : year % 4 === 0
+    )
+        console.log(" Input year:", year, "is a Leap Year");
+    else
+        console.log(
+            " Input year:",
+            year,
+            "is NOT a Leap Year"
+        );
+}
+ 
+let inputYear = 2020;
+isLeapYear(inputYear);
+inputYear = 2023;
+isLeapYear(inputYear);
+
+
+
+
